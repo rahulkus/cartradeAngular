@@ -1,0 +1,67 @@
+<div>
+	<div class="row">
+		<div class="col-sm-4">
+			<section class="filtersSection">
+			<div class="searchTitle">Keywords</div>
+				<div class="input-group input-group-md searchField">
+					<div class="icon-addon addon-md">
+                        <input type="text" placeholder="What are you looking for?" class="form-control">
+                    </div>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Search!</button>
+                    </span>
+                </div>
+				<div class="filterDiv">
+					<h2 (click)="pricetoggle()" class="accordionHeading">Price Range</h2>
+					<accordion [collapse]="isVisiblePrice">
+						<section>Filters</section>
+					</accordion>
+					<h2 (click)="brandtoggle()" class="accordionHeading">Brand & Model</h2>
+					<accordion [collapse]="isVisibleBrand">
+						<section>Filters</section>
+					</accordion>
+					<h2 (click)="modeltoggle()" class="accordionHeading">Model Year</h2>
+					<accordion [collapse]="isVisibleModel">
+						<section>Filters</section>
+					</accordion>
+					<h2 (click)="fueltoggle()" class="accordionHeading">Fuel Year</h2>
+					<accordion [collapse]="isVisibleFuel">
+						<section>Filters</section>
+					</accordion>
+					<h2 (click)="driventoggle()" class="accordionHeading">KMs Driven</h2>
+					<accordion [collapse]="isVisibleDriven">
+						<section>Filters</section>
+					</accordion>
+					<h2 (click)="bodytoggle()" class="accordionHeading">Body Type</h2>
+					<accordion [collapse]="isVisibleBody">
+						<section>Filters</section>
+					</accordion>
+				</div>
+				<div class="vehicleReport">
+					<span class="title">Get Vehicle Report</span><br/>
+					<span class="text">Powered by Carjam</span>
+				</div>
+			</section>
+		</div>
+		<div class="col-sm-8 padding-left-zero">
+			<div class="homeBanner">
+				<img src="assets/carBanner.png"/>
+			</div>
+			<div class="searchResults">
+				<p class="searchResultsTitle">By Body Type</p>
+				<div class="carbybodytype">
+					<ul>
+						<li><a title="Hatchback Cars" href="#"><span class="hatchback"></span><span>Hatchback</span></a></li>
+						<li><a title="Sedan Cars" href="#"><span class="sedan"></span><span>Sedan</span></a></li>      
+						<li class="last"><a title="MUV Cars" href="#"><span class="muv"></span><span>MUV</span></a></li>
+						<li><a title="SUV Cars" href="#"><span class="suv"></span><span>SUV</span></a></li>
+						<li><a title="Luxury Cars" href="#"><span class="luxury"></span><span>Luxury</span></a></li>
+						<li class="last"><a title="Hybrids Cars" href="#"><span class="hybirds"></span><span>Hybrids</span></a></li> 
+						<li><a title="Minivans Cars" href="#"><span class="minivans"></span><span>Minivans</span></a></li>              
+						<li><a title="Convertibles Cars" href="#"><span class="convertibles"></span><span>Convertibles</span></a></li>
+					</ul><div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

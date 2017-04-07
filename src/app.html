@@ -1,0 +1,79 @@
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div></div>
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><img src="assets/logo.png" alt=""/></a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="sell-icon"><a [routerLink]="['/home']">Sell</a></li>
+				<li class="account-icon"><a [routerLink]="['/login']">My Account</a></li>
+				<li class="help-icon"><a [routerLink]="['/home']">Help</a></li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</nav>
+<div class="container main-container">
+	<router-outlet></router-outlet>
+</div>
+<!-- Push Footer -->
+<footer class="footer">
+	<div class="container">
+		<div class="row footerTop">
+			<div class="col-sm-3">
+				<div class="foot-header">QUICK LINK</div>
+				<div class="foot-links">
+					<a [routerLink]="['/home']">- Search</a>
+					<a [routerLink]="['/home']">- Buy</a>
+					<a [routerLink]="['/home']">- Help</a>
+					<a [routerLink]="['/home']">- My account</a>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="foot-header">ABOUT US</div>
+				<div class="foot-links">
+					<a [routerLink]="['/home']">- Contact Us</a>
+					<a [routerLink]="['/home']">- Carrier</a>
+					<a [routerLink]="['/home']">- Press</a>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="foot-header">HELP</div>
+				<div class="foot-links">
+					<a [routerLink]="['/home']">- FAQs</a>
+					<a [routerLink]="['/home']">- Blogs</a>
+					<a [routerLink]="['/home']">- Pay</a>
+					<a [routerLink]="['/home']">- Selling guide</a>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="foot-header">GET IN TOUCH</div>
+				<div class="foot-links">
+					<a [routerLink]="['/home']">- Facebook</a>
+					<a [routerLink]="['/home']">- Twitter</a>
+					<a [routerLink]="['/home']">- Google</a>
+					<a [routerLink]="['/home']">- Youtube</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="pull-left" style="padding-top: 28px;">
+					<span>Top brands</span><br/>
+					<span>Top models</span><br/>
+					<span>Policies</span>
+				</div>
+				<!-- Company Information -->
+				<div class="pull-right" style="padding-top: 28px;">Copyright &copy; Cipherermatrix</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</footer>
