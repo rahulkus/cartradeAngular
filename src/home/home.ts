@@ -46,37 +46,4 @@ export class Home {
   bodytoggle() {
         this.isVisibleBody = !this.isVisibleBody;
   }
-
-  logout() {
-    localStorage.removeItem('id_token');
-    this.router.navigate(['login']);
-  }
-
-  callAnonymousApi() {
-    this._callApi('Anonymous', 'api url');
-  }
-
-  callSecuredApi() {
-    this._callApi('Secured', 'api url');
-  }
-
-  _callApi(type, url) {
-    this.response = null;
-    if (type === 'Anonymous') {
-      // For non-protected routes, just use Http
-      this.http.get(url)
-        .subscribe(
-          response => this.response = response.text(),
-          error => this.response = error.text()
-        );
-    }
-    if (type === 'Secured') {
-      // For protected routes, use AuthHttp
-      this.authHttp.get(url)
-        .subscribe(
-          response => this.response = response.text(),
-          error => this.response = error.text()
-        );
-    }
-  }
 }

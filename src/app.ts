@@ -11,5 +11,19 @@ const template = require('./app.html');
 })
 
 export class App {
-  constructor(public router: Router) {}
+  public userLoggedIn: boolean;
+  username: string;
+
+  constructor(public router: Router) {
+    if(localStorage.getItem('id_token')){
+      this.userLoggedIn = true;
+      this.username = localStorage.getItem('user');
+    }
+  }
+
+  logout() {
+    localStorage.removeItem('id_token');
+    localStorage.removeItem('user');
+    this.router.navigate(['login']);
+  }
 }

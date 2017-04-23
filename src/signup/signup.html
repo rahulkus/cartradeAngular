@@ -1,13 +1,25 @@
 <div class="signup center-block jumbotron">
   <h1>Signup</h1>
-  <form role="form" (submit)="signup($event, username.value, password.value)">
+  <form role="form" (submit)="Signup($event, fname.value, lname.value, mobile.value, email.value, password.value)">
   <div class="form-group">
-    <label for="username">Username</label>
-    <input type="text" #username class="form-control" id="username" placeholder="Username">
+    <label for="fname">First name</label>
+    <input type="text" #fname class="form-control" id="fname" placeholder="First name" required>
+  </div>
+  <div class="form-group">
+    <label for="lname">Last name</label>
+    <input type="text" #lname class="form-control" id="lname" placeholder="Second name" required>
+  </div>
+  <div class="form-group">
+    <label for="mobile">Mobile number</label>
+    <input type="number" #mobile class="form-control" id="mobile" placeholder="Mobile number" minlength="8" maxlength="11" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" #email class="form-control" id="email" placeholder="Email address" required>
   </div>
   <div class="form-group">
     <label for="password">Password</label>
-    <input type="password" #password class="form-control" id="password" placeholder="Password">
+    <input type="password" #password class="form-control" id="password" placeholder="Password" required>
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>

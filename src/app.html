@@ -11,13 +11,21 @@
 			</button>
 			<a class="navbar-brand" href="#"><img src="assets/logo.png" alt=""/></a>
 		</div>
-		<div id="navbar" class="navbar-collapse collapse">
+		<div *ngIf="!userLoggedIn" id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li class="sell-icon"><a [routerLink]="['/home']">Sell</a></li>
 				<li class="account-icon"><a [routerLink]="['/login']">My Account</a></li>
-				<li class="help-icon"><a [routerLink]="['/home']">Help</a></li>
+                <li class="help-icon"><a [routerLink]="['/home']">Help</a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
+		<div *ngIf="userLoggedIn" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="sell-icon"><a [routerLink]="['/home']">Sell</a></li>
+				<li><a href="#">Welcome <span>{{username}}</span></a></li>
+				<li><a (click)="logout()">Logout</a></li>
+				<li class="help-icon"><a [routerLink]="['/home']">Help</a></li>
+			</ul>
+		</div>	
 	</div>
 </nav>
 <div class="container main-container">

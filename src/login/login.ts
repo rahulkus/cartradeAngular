@@ -12,16 +12,20 @@ const template = require('./login.html');
   styles: [ styles ]
 })
 export class Login {
-  constructor(public router: Router, public http: Http) {
-  }
+  public isLoggedIn: boolean;
 
-  login(event, username, password) {
+  constructor(public router: Router, public http: Http) {
+   }
+
+  login(event, email, password) {
     event.preventDefault();
-    let body = JSON.stringify({ username, password });
-    this.http.post('api url', body, { headers: contentHeaders })
+    let body = JSON.stringify({ email, password });
+    this.http.post('http://13.55.117.16/api/auth/login', body, { headers: contentHeaders })
       .subscribe(
         response => {
-          localStorage.setItem('id_token', response.json().id_token);
+          localStorage.setItem('id_token', response.json().token);
+          localStorage.setItem('user', email);
+          this.isLoggedIn = true;
           this.router.navigate(['home']);
         },
         error => {

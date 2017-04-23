@@ -15,13 +15,13 @@ export class Signup {
   constructor(public router: Router, public http: Http) {
   }
 
-  signup(event, username, password) {
+  Signup(event, fname, lname, mobile, email, password) {
     event.preventDefault();
-    let body = JSON.stringify({ username, password });
-    this.http.post('api url', body, { headers: contentHeaders })
+    let body = JSON.stringify({ fname, lname, mobile, email, password });
+    this.http.post('http://13.55.117.16/api/auth/signup', body, { headers: contentHeaders })
       .subscribe(
         response => {
-          localStorage.setItem('id_token', response.json().id_token);
+          localStorage.setItem('id_token', response.json().token);
           this.router.navigate(['home']);
         },
         error => {
